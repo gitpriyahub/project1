@@ -1,12 +1,12 @@
 pipeline {
   agent any
   stages { 
-    stage ("Build") {
+    stage ('Build') {
       steps{
         sh 'sudo docker build -t project:$Build_Number .'
       }
     }
-    stage ("Deploy") {
+    stage ('Deploy') {
            steps{
              sh 'sudo docker stop priya'
              sh 'sudo docker rm priya'
