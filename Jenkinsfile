@@ -15,7 +15,7 @@ pipeline {
            }
     stage ("Push") {
       steps{
-        sh "docker push priyadocnew/jenkins-docker-hub"
+        sh "sudo docker push priyadocnew/jenkins-docker-hub"
       }
     }
            }
