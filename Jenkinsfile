@@ -15,7 +15,7 @@ pipeline {
            }
     stage ("Push") {
       steps{
-        sh "sudo docker push docker.io/priyadocnew/project1:$BUILD_NUMBER"
+        sh "sudo docker push docker.io/priyadocnew/project1:15"
       }
     }
            }
