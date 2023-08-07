@@ -13,5 +13,10 @@ pipeline {
              sh "sudo docker run -itd -p 3000:3000 --name priya project1:$BUILD_NUMBER"
            }
            }
+    stage ("Push") {
+      steps{
+        sh "docker push priyadocnew/jenkins-docker-hub"
+      }
+    }
            }
            }
