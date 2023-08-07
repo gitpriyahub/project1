@@ -15,7 +15,7 @@ pipeline {
            }
     stage ("Push") {
       steps{
-        sh "sudo docker push priyadocnew/project1"
+        sh "sudo docker push docker.io/priyadocnew/project1"
       }
     }
            }
