@@ -15,7 +15,7 @@ pipeline {
            }
     stage ("Login") {
       steps{
-        sh "sudo dockerhub_PSW | sudo docker login -u | sudo dockerhub_USR --password-stdin"
+        sh "sudo cat my-password | sudo docker login -u priyadocnew --password-stdin"
       }
     }
     stage ("Push") {
