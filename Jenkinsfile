@@ -13,9 +13,15 @@ pipeline {
              sh "sudo docker run -itd -p 3000:3000 --name priya project1:$BUILD_NUMBER"
            }
            }
+    stage ("Login") {
+      steps{
+        sh "echo sudo DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+      }
+    }
     stage ("Push") {
       steps{
-        sh "sudo docker push docker.io/priyadocnew/project1:15"
+        sh "sudo docker tag project1:$BUILD_NUMBER priyadocnew/project1:$BUILD_NUMBER"
+        sh "sudo docker push priyadocnew/project1:$BUILD_NUMBER"
       }
     }
            }
