@@ -15,7 +15,7 @@ pipeline {
            }
     stage ("Login") {
       steps{
-        sh "sudo cat my-password | sudo docker login -u priyadocnew --password-stdin"
+        sh "sudo $priyadocnew_PSW | docker login -u $priyadocnew_USR  --password-stdin"
       }
     }
     stage ("Push") {
