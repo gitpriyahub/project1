@@ -1,7 +1,7 @@
 pipeline {
   agent any
     environment {
-    DOCKERHUB_CREDENTIALS = credentials("dockerhub")
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
   stages { 
     stage ("Build") {
@@ -18,7 +18,7 @@ pipeline {
            }
     stage ("Login") {
       steps{
-        sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
+        sh "echo $DOCKERHUB_CREDENTIALS_PASSWORD | sudo docker login -u $DOCKERHUB_CREDENTIALS_USER --password-stdin"
       }
     }
     stage ("Push") {
